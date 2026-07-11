@@ -1,17 +1,152 @@
-import { useState } from "react";
+import {
+    useEffect,
+    useRef,
+    useState,
+    type WheelEvent as ReactWheelEvent,
+} from "react";
 import "./App.css";
+import type { Fish } from "./types";
+import { levels } from "./data/levels";
+import { fishByLevel } from "./data/fish";
+import { Sidebar } from "./components/Sidebar";
+import { SurfaceLevel } from "./components/SurfaceLevel";
+import { DepthLevel } from "./components/DepthLevel";
+import { ProjectModal } from "./components/ProjectModal";
 
-function App() {
-    const [count, setCount] = useState(0);
+export default function App() {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [selectedFish, setSelectedFish] = useState<Fish | null>(null);
+    const [modalVisible, setModalVisible] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    // Write a counter button that displays the current count and increments it by 1 each time it's clicked
+    const activeIndexRef = useRef(activeIndex);
+    const lastWheelTimeRef = useRef(0);
+
+    useEffect(() => {
+        activeIndexRef.current = activeIndex;
+    }, [activeIndex]);
+
+    const goToLevel = (target: number) => {
+        if (target < 0 || target >= levels.length) {
+            return;
+        }
+
+        if (activeIndexRef.current === target) {
+            return;
+        }
+
+        setActiveIndex(target);
+        setSelectedFish(null);
+        setModalVisible(false);
+    };
+
+    useEffect(() => {
+        const handleKeyDown = (event: globalThis.KeyboardEvent) => {
+            if (
+                event.key === "ArrowDown" ||
+                event.key === "PageDown" ||
+                event.key === " "
+            ) {
+                event.preventDefault();
+                goToLevel(activeIndexRef.current + 1);
+            }
+
+            if (event.key === "ArrowUp" || event.key === "PageUp") {
+                event.preventDefault();
+                goToLevel(activeIndexRef.current - 1);
+            }
+
+            if (event.key === "Escape") {
+                setSidebarOpen(false);
+                setModalVisible(false);
+                window.setTimeout(() => setSelectedFish(null), 220);
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, []);
+
+    const handleWheel = (event: ReactWheelEvent<HTMLDivElement>) => {
+        const delta = event.deltaY;
+        if (Math.abs(delta) < 15) {
+            return;
+        }
+
+        const now = Date.now();
+        if (now - lastWheelTimeRef.current < 450) {
+            event.preventDefault();
+            return;
+        }
+
+        lastWheelTimeRef.current = now;
+        event.preventDefault();
+
+        if (delta > 0) {
+            goToLevel(activeIndexRef.current + 1);
+        } else if (delta < 0) {
+            goToLevel(activeIndexRef.current - 1);
+        }
+    };
+
+    const openFish = (fish: Fish) => {
+        setSelectedFish(fish);
+        setModalVisible(false);
+        window.requestAnimationFrame(() => {
+            setModalVisible(true);
+        });
+    };
+
+    const closeFish = () => {
+        setModalVisible(false);
+        window.setTimeout(() => setSelectedFish(null), 700);
+    };
+
     return (
-        <div className="App">
-            <h1>Counter</h1>
-            <p>Current count: {count}</p>
-            <button onClick={() => setCount(count + 1)}>Increment</button>
+        <div className="app-shell" onWheel={handleWheel} tabIndex={0}>
+            <Sidebar
+                sidebarOpen={sidebarOpen}
+                setSidebarOpen={setSidebarOpen}
+                activeIndex={activeIndex}
+                goToLevel={goToLevel}
+                levels={levels}
+            />
+
+            <div
+                className="scene"
+                style={{ transform: `translateY(-${activeIndex * 100}vh)` }}
+            >
+                {levels.map((level) => {
+                    const fishPool = fishByLevel[level.id];
+
+                    return (
+                        <section
+                            key={level.id}
+                            className={`level level-${level.id}`}
+                        >
+                            <div className="level-backdrop" />
+
+                            {level.id === "surface" ? (
+                                <SurfaceLevel goToLevel={goToLevel} />
+                            ) : (
+                                <DepthLevel
+                                    level={level}
+                                    fishPool={fishPool}
+                                    onOpenFish={openFish}
+                                />
+                            )}
+                        </section>
+                    );
+                })}
+            </div>
+
+            {selectedFish ? (
+                <ProjectModal
+                    selectedFish={selectedFish}
+                    modalVisible={modalVisible}
+                    onClose={closeFish}
+                />
+            ) : null}
         </div>
     );
 }
-
-export default App;
