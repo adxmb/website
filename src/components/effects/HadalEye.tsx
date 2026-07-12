@@ -50,7 +50,7 @@ export function HadalEye() {
 
         const cycle = async () => {
             while (!cancelled) {
-                await wait(9000 + Math.random() * 12000);
+                await wait(20000 + Math.random() * 12000);
                 if (cancelled) return;
 
                 blinkTally = 0;
