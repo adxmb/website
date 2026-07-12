@@ -65,12 +65,12 @@
 .ray-wrap-4 {
     left: 38%;
     width: 11%;
-    transform: rotate(-24deg);
+    transform: rotate(-27deg);
 }
 .ray-wrap-5 {
-    left: 48%;
+    left: 46%;
     width: 12%;
-    transform: rotate(-48deg);
+    transform: rotate(-51deg);
 }
 
 .ray {
@@ -80,9 +80,9 @@
     background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0.3) 0%,
-        rgba(255, 255, 255, 0.25) 65%,
-        rgba(255, 255, 255, 0.05) 85%,
-        rgba(255, 255, 255, 0) 100%
+        rgba(255, 255, 255, 0.25) 55%,
+        rgba(255, 255, 255, 0.05) 75%,
+        rgba(255, 255, 255, 0) 90%
     );
     clip-path: polygon(46% 0%, 54% 0%, 100% 100%, 0% 100%);
     animation-name: ray-sway;
@@ -160,7 +160,7 @@
 
 .biolume-dot {
     position: absolute;
-    border-radius: 50%;
+    border-radius: 70%;
     animation-name: biolume-pulse;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
@@ -169,16 +169,16 @@
 .biolume-cyan {
     background: radial-gradient(
         circle,
-        rgba(125, 211, 252, 0.9),
-        rgba(125, 211, 252, 0) 70%
+        rgba(167, 227, 255, 0.9),
+        rgba(125, 211, 252, 0) 80%
     );
 }
 
 .biolume-violet {
     background: radial-gradient(
         circle,
-        rgba(167, 139, 250, 0.9),
-        rgba(167, 139, 250, 0) 70%
+        rgba(185, 161, 255, 0.9),
+        rgba(167, 139, 250, 0) 80%
     );
 }
 
@@ -190,8 +190,8 @@
         translate: 0 0;
     }
     50% {
-        opacity: 0.9;
-        scale: 1.15;
+        opacity: 0.75;
+        scale: 1.8;
         translate: var(--drift, 6px) -10px;
     }
 }

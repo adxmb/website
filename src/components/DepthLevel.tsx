@@ -22,7 +22,7 @@ export function DepthLevel({ level, fishPool, onOpenFish }: DepthLevelProps) {
                 <div className="depth-panel">
                     <div className="panel-text">
                         <h3>{panel.heading}</h3>
-                        <p>{panel.body}</p>
+                        {panel.body !== "" ? <p>{panel.body}</p> : null}
                     </div>
                     {panel.facts.length > 0 ? (
                         <div className="panel-facts">
