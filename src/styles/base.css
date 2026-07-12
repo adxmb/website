@@ -1,0 +1,19 @@
+.app-shell {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(180deg, #06131f 0%, #0d2338 45%, #07111d 100%);
+    color: #f8fafc;
+    cursor: default;
+    overscroll-behavior: none;
+    touch-action: none;
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    font-size: 0.75rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #7dd3fc;
+}

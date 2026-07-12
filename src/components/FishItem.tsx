@@ -17,7 +17,10 @@ export function FishItem({ fish, onOpen }: FishItemProps) {
     };
 
     return (
-        <div className="fish-movement" style={fishStyle}>
+        <div
+            className={`fish-movement swim-path-${fish.swimPattern}`}
+            style={fishStyle}
+        >
             <button
                 type="button"
                 className="fish-btn"

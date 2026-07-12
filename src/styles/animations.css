@@ -1,0 +1,151 @@
+@keyframes swim-glide {
+    0% {
+        offset-distance: 0%;
+        transform: scaleX(1) scale(0.98);
+    }
+    16% {
+        offset-distance: 18%;
+        transform: scaleX(1) scale(1.02);
+    }
+    32% {
+        offset-distance: 38%;
+        transform: scaleX(1) scale(1.05);
+    }
+    48% {
+        offset-distance: 49%;
+        transform: scaleX(1) scale(1);
+    }
+    50% {
+        offset-distance: 50%;
+        transform: scaleX(1) scale(1);
+    }
+    51% {
+        offset-distance: 50%;
+        transform: scaleX(-1) scale(1);
+    }
+    68% {
+        offset-distance: 68%;
+        transform: scaleX(-1) scale(1.03);
+    }
+    84% {
+        offset-distance: 84%;
+        transform: scaleX(-1) scale(1);
+    }
+    100% {
+        offset-distance: 100%;
+        transform: scaleX(-1) scale(0.98);
+    }
+}
+
+@keyframes swim-dart {
+    0% {
+        offset-distance: 0%;
+        transform: scaleX(1) scale(0.96);
+    }
+    14% {
+        offset-distance: 16%;
+        transform: scaleX(1) scale(1.05);
+    }
+    30% {
+        offset-distance: 35%;
+        transform: scaleX(1) scale(1.02);
+    }
+    45% {
+        offset-distance: 48%;
+        transform: scaleX(1) scale(1);
+    }
+    50% {
+        offset-distance: 50%;
+        transform: scaleX(1) scale(1);
+    }
+    51% {
+        offset-distance: 50%;
+        transform: scaleX(-1) scale(1);
+    }
+    70% {
+        offset-distance: 70%;
+        transform: scaleX(-1) scale(1.06);
+    }
+    90% {
+        offset-distance: 90%;
+        transform: scaleX(-1) scale(1);
+    }
+    100% {
+        offset-distance: 100%;
+        transform: scaleX(-1) scale(0.96);
+    }
+}
+
+@keyframes swim-swoop {
+    0% {
+        offset-distance: 0%;
+        transform: scaleX(1) scale(0.98);
+    }
+    20% {
+        offset-distance: 22%;
+        transform: scaleX(1) scale(1.03);
+    }
+    35% {
+        offset-distance: 38%;
+        transform: scaleX(1) scale(1.07);
+    }
+    48% {
+        offset-distance: 49%;
+        transform: scaleX(1) scale(1);
+    }
+    50% {
+        offset-distance: 50%;
+        transform: scaleX(1) scale(1);
+    }
+    51% {
+        offset-distance: 50%;
+        transform: scaleX(-1) scale(1);
+    }
+    70% {
+        offset-distance: 70%;
+        transform: scaleX(-1) scale(1.06);
+    }
+    88% {
+        offset-distance: 90%;
+        transform: scaleX(-1) scale(1);
+    }
+    100% {
+        offset-distance: 100%;
+        transform: scaleX(-1) scale(0.98);
+    }
+}
+
+@keyframes swim-drift {
+    0% {
+        offset-distance: 0%;
+        transform: scaleX(1) scale(0.99);
+    }
+    24% {
+        offset-distance: 26%;
+        transform: scaleX(1) scale(1.02);
+    }
+    40% {
+        offset-distance: 42%;
+        transform: scaleX(1) scale(1.03);
+    }
+    48% {
+        offset-distance: 49%;
+        transform: scaleX(1) scale(1);
+    }
+    50% {
+        offset-distance: 50%;
+        transform: scaleX(1) scale(1);
+    }
+    51% {
+        offset-distance: 50%;
+        transform: scaleX(-1) scale(1);
+    }
+    76% {
+        offset-distance: 76%;
+        transform: scaleX(-1) scale(1.01);
+    }
+    100% {
+        offset-distance: 100%;
+        transform: scaleX(-1) scale(0.99);
+    }
+}

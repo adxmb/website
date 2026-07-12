@@ -1,0 +1,44 @@
+.scene {
+    position: relative;
+    height: 100vh;
+    transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.level {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    padding: 32px clamp(24px, 5vw, 64px);
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.level-backdrop {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top left,
+        rgba(255, 255, 255, 0.16),
+        transparent 40%
+    );
+    pointer-events: none;
+}
+
+.level-surface {
+    background: linear-gradient(180deg, #78d2ff 0%, #1d74c0 45%, #07273d 100%);
+}
+
+.level-shallows {
+    background: linear-gradient(180deg, #0b4e6c 0%, #0f6f95 45%, #062539 100%);
+}
+
+.level-twilight {
+    background: linear-gradient(180deg, #17335d 0%, #2e3b88 55%, #0a1023 100%);
+}
+
+.level-midnight {
+    background: linear-gradient(180deg, #020617 0%, #111827 45%, #030712 100%);
+}
