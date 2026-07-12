@@ -12,6 +12,7 @@ import { Sidebar } from "./components/Sidebar";
 import { SurfaceLevel } from "./components/SurfaceLevel";
 import { DepthLevel } from "./components/DepthLevel";
 import { ProjectModal } from "./components/ProjectModal";
+import { LevelEffects } from "./components/LevelEffects";
 
 export default function App() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -116,7 +117,7 @@ export default function App() {
                 className="scene"
                 style={{ transform: `translateY(-${activeIndex * 100}vh)` }}
             >
-                {levels.map((level) => {
+                {levels.map((level, index) => {
                     const fishPool = fishByLevel[level.id];
 
                     return (
@@ -125,6 +126,10 @@ export default function App() {
                             className={`level level-${level.id}`}
                         >
                             <div className="level-backdrop" />
+                            <LevelEffects
+                                levelId={level.id}
+                                isActive={index === activeIndex}
+                            />
 
                             {level.id === "surface" ? (
                                 <SurfaceLevel goToLevel={goToLevel} />

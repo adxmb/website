@@ -143,4 +143,5 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
             swimPattern: "swoop",
         },
     ],
+    hadal: [],
 };

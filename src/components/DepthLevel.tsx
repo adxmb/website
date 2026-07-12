@@ -8,6 +8,8 @@ type DepthLevelProps = {
 };
 
 export function DepthLevel({ level, fishPool, onOpenFish }: DepthLevelProps) {
+    const panel = level.panel;
+
     return (
         <div className="depth-copy">
             <div className="depth-intro">
@@ -16,33 +18,36 @@ export function DepthLevel({ level, fishPool, onOpenFish }: DepthLevelProps) {
                 <p>{level.intro}</p>
             </div>
 
-            <div className="depth-panel">
-                <div className="panel-text">
-                    <h3>What lives here</h3>
-                    <p>
-                        The deeper you drift, the more curious the work becomes.
-                        These rooms hold project snapshots, experiments, and
-                        system-level thinking that are worth exploring one fish
-                        at a time.
-                    </p>
-                </div>
-                <div className="panel-facts">
-                    <div>
-                        <strong>Focus</strong>
-                        <span>Interaction and atmosphere</span>
+            {panel ? (
+                <div className="depth-panel">
+                    <div className="panel-text">
+                        <h3>{panel.heading}</h3>
+                        <p>{panel.body}</p>
                     </div>
-                    <div>
-                        <strong>Energy</strong>
-                        <span>Measured, tactile, alive</span>
-                    </div>
+                    {panel.facts.length > 0 ? (
+                        <div className="panel-facts">
+                            {panel.facts.map((fact) => (
+                                <div key={fact.label}>
+                                    <strong>{fact.label}</strong>
+                                    <span>{fact.value}</span>
+                                </div>
+                            ))}
+                        </div>
+                    ) : null}
                 </div>
-            </div>
+            ) : null}
 
-            <div className="fish-layer" aria-label={`${level.title} fish`}>
-                {fishPool.map((fish) => (
-                    <FishItem key={fish.id} fish={fish} onOpen={onOpenFish} />
-                ))}
-            </div>
+            {fishPool.length > 0 ? (
+                <div className="fish-layer" aria-label={`${level.title} fish`}>
+                    {fishPool.map((fish) => (
+                        <FishItem
+                            key={fish.id}
+                            fish={fish}
+                            onOpen={onOpenFish}
+                        />
+                    ))}
+                </div>
+            ) : null}
         </div>
     );
 }

@@ -14,10 +14,17 @@ export type Fish = {
     swimPattern: "glide" | "dart" | "swoop" | "drift";
 };
 
+export type LevelPanel = {
+    heading: string;
+    body: string;
+    facts: { label: string; value: string }[];
+};
+
 export type Level = {
-    id: "surface" | "shallows" | "twilight" | "midnight";
+    id: "surface" | "shallows" | "twilight" | "midnight" | "hadal";
     title: string;
     depth: string;
     intro: string;
     accent: string;
+    panel?: LevelPanel;
 };

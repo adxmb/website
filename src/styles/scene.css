@@ -42,3 +42,7 @@
 .level-midnight {
     background: linear-gradient(180deg, #020617 0%, #111827 45%, #030712 100%);
 }
+
+.level-hadal {
+    background: #000000;
+}
