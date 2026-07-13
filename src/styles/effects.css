@@ -232,11 +232,11 @@
 }
 
 .pupil-group .pupil {
-    animation: pupil-settle 1.6s cubic-bezier(0.22, 0, 0.3, 1) both;
+    animation: pupil-settle 1.8s cubic-bezier(0.22, 0, 0.3, 1) both;
 }
 
 .pupil-group .pupil-glint {
-    animation: pupil-settle 1.6s cubic-bezier(0.22, 0, 0.3, 1) both;
+    animation: pupil-settle 1.8s cubic-bezier(0.22, 0, 0.3, 1) both;
 }
 
 @keyframes pupil-settle {

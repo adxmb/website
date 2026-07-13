@@ -1,13 +1,13 @@
-import type { Fish } from "../types";
+import type { Project } from "../types";
 
 type ProjectModalProps = {
-    selectedFish: Fish;
+    project: Project;
     modalVisible: boolean;
     onClose: () => void;
 };
 
 export function ProjectModal({
-    selectedFish,
+    project,
     modalVisible,
     onClose,
 }: ProjectModalProps) {
@@ -25,18 +25,18 @@ export function ProjectModal({
                 <button type="button" className="close-btn" onClick={onClose}>
                     ×
                 </button>
-                <p className="eyebrow">Project spotlight</p>
-                <h3>{selectedFish.title}</h3>
-                <p>{selectedFish.description}</p>
+                <p className="eyebrow">{project.spotlightLabel}</p>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
                 <div className="chip-row">
-                    {selectedFish.stack.map((item) => (
+                    {project.stack.map((item) => (
                         <span key={item} className="chip">
                             {item}
                         </span>
                     ))}
                 </div>
                 <a
-                    href={selectedFish.link}
+                    href={project.link}
                     target="_blank"
                     rel="noreferrer"
                     className="ghost-link"

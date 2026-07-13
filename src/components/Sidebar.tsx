@@ -5,6 +5,7 @@ type SidebarProps = {
     setSidebarOpen: (updater: (value: boolean) => boolean) => void;
     activeIndex: number;
     goToLevel: (target: number) => void;
+    onOpenSummary: (levelId: Level["id"]) => void;
     levels: Level[];
 };
 
@@ -13,11 +14,17 @@ export function Sidebar({
     setSidebarOpen,
     activeIndex,
     goToLevel,
+    onOpenSummary,
     levels,
 }: SidebarProps) {
     const closeAndGo = (target: number) => {
         setSidebarOpen(() => false);
         goToLevel(target);
+    };
+
+    const closeAndSummarize = (levelId: Level["id"]) => {
+        setSidebarOpen(() => false);
+        onOpenSummary(levelId);
     };
 
     return (
@@ -51,15 +58,30 @@ export function Sidebar({
                         Contact
                     </button>
 
-                    <p className="nav-group">Projects</p>
-                    <button type="button" onClick={() => closeAndGo(1)}>
-                        Shallows projects
+                    <p className="nav-group">Summaries</p>
+                    <button
+                        type="button"
+                        onClick={() => closeAndSummarize("shallows")}
+                    >
+                        Shallows summaries
                     </button>
-                    <button type="button" onClick={() => closeAndGo(2)}>
-                        Twilight experiments
+                    <button
+                        type="button"
+                        onClick={() => closeAndSummarize("twilight")}
+                    >
+                        Twilight summaries
                     </button>
-                    <button type="button" onClick={() => closeAndGo(3)}>
-                        Midnight systems
+                    <button
+                        type="button"
+                        onClick={() => closeAndSummarize("midnight")}
+                    >
+                        Midnight summaries
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => closeAndSummarize("hadal")}
+                    >
+                        Hadal summaries
                     </button>
 
                     <p className="nav-group">Levels</p>

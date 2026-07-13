@@ -5,13 +5,15 @@ import {
     type WheelEvent as ReactWheelEvent,
 } from "react";
 import "./App.css";
-import type { Fish } from "./types";
+import type { Fish, Level, Project } from "./types";
 import { levels } from "./data/levels";
 import { fishByLevel } from "./data/fish";
+import { projectsById, getUniqueProjectsForFish } from "./data/projects";
 import { Sidebar } from "./components/Sidebar";
 import { SurfaceLevel } from "./components/SurfaceLevel";
 import { DepthLevel } from "./components/DepthLevel";
 import { ProjectModal } from "./components/ProjectModal";
+import { SummaryPanel } from "./components/SummaryPanel";
 import { LevelEffects } from "./components/LevelEffects";
 
 export default function App() {
@@ -19,6 +21,10 @@ export default function App() {
     const [selectedFish, setSelectedFish] = useState<Fish | null>(null);
     const [modalVisible, setModalVisible] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [summaryLevelId, setSummaryLevelId] = useState<Level["id"] | null>(
+        null,
+    );
+    const [summaryVisible, setSummaryVisible] = useState(false);
 
     const activeIndexRef = useRef(activeIndex);
     const lastWheelTimeRef = useRef(0);
@@ -61,11 +67,13 @@ export default function App() {
                 setSidebarOpen(false);
                 setModalVisible(false);
                 window.setTimeout(() => setSelectedFish(null), 220);
+                closeSummary();
             }
         };
 
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleWheel = (event: ReactWheelEvent<HTMLDivElement>) => {
@@ -103,6 +111,33 @@ export default function App() {
         window.setTimeout(() => setSelectedFish(null), 700);
     };
 
+    const openSummary = (levelId: Level["id"]) => {
+        setSummaryLevelId(levelId);
+        setSummaryVisible(false);
+        window.requestAnimationFrame(() => {
+            setSummaryVisible(true);
+        });
+    };
+
+    const closeSummary = () => {
+        setSummaryVisible(false);
+        window.setTimeout(() => setSummaryLevelId(null), 700);
+    };
+
+    const selectedProject: Project | null = selectedFish
+        ? (projectsById[selectedFish.projectId] ?? null)
+        : null;
+
+    const summaryLevel = summaryLevelId
+        ? (levels.find((level) => level.id === summaryLevelId) ?? null)
+        : null;
+
+    const summaryProjects = summaryLevelId
+        ? getUniqueProjectsForFish(
+              fishByLevel[summaryLevelId].map((fish) => fish.projectId),
+          )
+        : [];
+
     return (
         <div className="app-shell" onWheel={handleWheel} tabIndex={0}>
             <Sidebar
@@ -110,6 +145,7 @@ export default function App() {
                 setSidebarOpen={setSidebarOpen}
                 activeIndex={activeIndex}
                 goToLevel={goToLevel}
+                onOpenSummary={openSummary}
                 levels={levels}
             />
 
@@ -145,11 +181,20 @@ export default function App() {
                 })}
             </div>
 
-            {selectedFish ? (
+            {selectedFish && selectedProject ? (
                 <ProjectModal
-                    selectedFish={selectedFish}
+                    project={selectedProject}
                     modalVisible={modalVisible}
                     onClose={closeFish}
+                />
+            ) : null}
+
+            {summaryLevel ? (
+                <SummaryPanel
+                    level={summaryLevel}
+                    projects={summaryProjects}
+                    visible={summaryVisible}
+                    onClose={closeSummary}
                 />
             ) : null}
         </div>

@@ -1,10 +1,19 @@
-export type Fish = {
+export type Project = {
     id: string;
     name: string;
     title: string;
     description: string;
     stack: string[];
     link: string;
+    // Shown above the project title in the modal — customizable per
+    // project since not everything is a "project" (could be an
+    // experiment, a write-up, a tool, etc).
+    spotlightLabel: string;
+};
+
+export type Fish = {
+    id: string;
+    projectId: string;
     emoji: string;
     imageSrc?: string;
     x: number;
