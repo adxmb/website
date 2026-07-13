@@ -1,6 +1,16 @@
 import type { Project } from "../types";
 
 export const projectsById: Record<string, Project> = {
+    "neural-network": {
+        id: "neural-network",
+        name: "Neural Network",
+        title: "Neural Network",
+        description:
+            "A lightweight neural network trained to detect different English accents from audio recordings. Explored different strategies and model optimisation.",
+        stack: ["Python", "NumPy", "Flask"],
+        link: "https://github.com/adxmb/neural-network",
+        spotlightLabel: "Project Spotlight",
+    },
     "northstar-studio": {
         id: "northstar-studio",
         name: "Northstar Studio",
@@ -11,35 +21,26 @@ export const projectsById: Record<string, Project> = {
         link: "https://github.com",
         spotlightLabel: "Project spotlight",
     },
-    "reef-notes": {
-        id: "reef-notes",
-        name: "Reef Notes",
-        title: "Productivity Companion",
+    "llm-test-oracles": {
+        id: "llm-test-oracles",
+        name: "LLM Research",
+        title: "Understanding LLM-Driven Test Oracle Generation",
         description:
-            "A personal dashboard that turns scattered ideas into focused plans with gentle visual feedback.",
-        stack: ["TypeScript", "Design Systems", "Accessibility"],
-        link: "https://github.com",
-        spotlightLabel: "Project spotlight",
+            "Researching Large Language Models’ (LLMs) capabilities for test oracle generation with real-world bugs and various prompting strategies. Developed Python tool to automatically evaluate OpenAI and StarCoder LLMs against 36 bugs and 4 strategies. Published in AIware Conference, November 2025.",
+        stack: ["Academic Research", "Literature Review", "LLMs"],
+        link: "https://ieeexplore.ieee.org/document/11334275",
+        linkLabel: "View Research",
+        spotlightLabel: "Research Project",
     },
-    "tideline-lab": {
-        id: "tideline-lab",
-        name: "Tideline Lab",
-        title: "Visual Research",
+    plantr: {
+        id: "plantr",
+        name: "AI Plant Matcher",
+        title: "AI Plant Matcher",
         description:
-            "A compact experiment space for testing atmospheric interfaces and textured interaction patterns.",
-        stack: ["CSS", "Animation", "Prototype"],
-        link: "https://github.com",
-        spotlightLabel: "Experiment log",
-    },
-    "neural-network": {
-        id: "neural-network",
-        name: "Neural Network",
-        title: "Neural Network",
-        description:
-            "A lightweight neural network trained to detect different English accents from audio recordings.",
-        stack: ["Python", "Flask"],
-        link: "https://github.com",
-        spotlightLabel: "Research note",
+            "Built a full-stack application in 48 hours leveraging OpenAI for intelligent plant preference matching and Pixabay API for image generation. 1st Place in UoA DEVS Hackathon 2024.",
+        stack: ["React", "Node.js", "OpenAI"],
+        link: "https://github.com/LocalhostLtd/DEV-Hackathon-2024",
+        spotlightLabel: "Hackathon Project",
     },
     "moonbeam-maps": {
         id: "moonbeam-maps",

@@ -12,7 +12,7 @@ export const levels: Level[] = [
         id: "shallows",
         title: "Shallows",
         depth: "Shallows",
-        intro: "Projects on the edge of the shoreline: clear, useful, and polished.",
+        intro: "An overview of personal projects I have worked on through the years.",
         accent: "#38bdf8",
         panel: {
             heading: "Built in the light",
