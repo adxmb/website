@@ -69,6 +69,7 @@ export const projectsById: Record<string, Project> = {
             "A gentle place to archive quick ideas, notes, and mood boards for future projects.",
         stack: ["Notes", "Archive", "Reflection"],
         link: "https://github.com",
+        linkLabel: "See Notes",
         spotlightLabel: "Field notes",
     },
     "deep-current": {
@@ -78,7 +79,6 @@ export const projectsById: Record<string, Project> = {
         description:
             "A research-driven concept for managing complex content flows without sacrificing clarity.",
         stack: ["System Design", "Strategy", "Content Ops"],
-        link: "https://github.com",
         spotlightLabel: "Project spotlight",
     },
     "blackwater-ui": {
@@ -93,11 +93,6 @@ export const projectsById: Record<string, Project> = {
     },
 };
 
-/**
- * Unique projects referenced by the fish on a given level, in first-seen
- * order. Multiple fish can share a projectId (e.g. the same project shown
- * twice with different swim patterns) — this collapses those to one entry.
- */
 export function getUniqueProjectsForFish(fishProjectIds: string[]): Project[] {
     const seen = new Set<string>();
     const result: Project[] = [];

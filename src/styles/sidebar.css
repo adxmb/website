@@ -16,12 +16,19 @@
     cursor: pointer;
     transition:
         transform 0.25s ease,
-        background 0.25s ease;
+        background 0.25s ease,
+        opacity 0.4s ease;
 }
 
 .sidebar-toggle:hover {
     transform: scale(1.03);
     background: rgba(3, 10, 26, 0.9);
+}
+
+.sidebar-toggle:disabled {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
 }
 
 .toggle-line {
@@ -61,13 +68,21 @@
     backdrop-filter: blur(18px);
     box-shadow: 0 20px 45px rgba(2, 6, 23, 0.28);
     transform: translateX(-110%);
-    transition: transform 0.75s ease;
+    transition:
+        transform 0.75s ease,
+        opacity 0.4s ease;
     pointer-events: none;
+    opacity: 1;
 }
 
 .sidebar.open {
     transform: translateX(0);
     pointer-events: auto;
+}
+
+.sidebar.locked {
+    opacity: 0.35;
+    pointer-events: none;
 }
 
 .brand-block h2 {

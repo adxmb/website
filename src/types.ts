@@ -4,10 +4,8 @@ export type Project = {
     title: string;
     description: string;
     stack: string[];
-    link: string;
-    // Shown above the project title in the modal — customizable per
-    // project since not everything is a "project" (could be an
-    // experiment, a write-up, a tool, etc).
+    link?: string;
+    linkLabel?: string;
     spotlightLabel: string;
 };
 

@@ -138,6 +138,8 @@ export default function App() {
           )
         : [];
 
+    const isOverlayOpen = Boolean(selectedFish) || Boolean(summaryLevelId);
+
     return (
         <div className="app-shell" onWheel={handleWheel} tabIndex={0}>
             <Sidebar
@@ -147,6 +149,7 @@ export default function App() {
                 goToLevel={goToLevel}
                 onOpenSummary={openSummary}
                 levels={levels}
+                locked={isOverlayOpen}
             />
 
             <div

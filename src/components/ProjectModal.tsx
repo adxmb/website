@@ -35,14 +35,16 @@ export function ProjectModal({
                         </span>
                     ))}
                 </div>
-                <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="ghost-link"
-                >
-                    Open project
-                </a>
+                {project.link ? (
+                    <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="ghost-link"
+                    >
+                        {project.linkLabel ?? "Open Project"}
+                    </a>
+                ) : null}
             </div>
         </div>
     );

@@ -7,6 +7,7 @@ type SidebarProps = {
     goToLevel: (target: number) => void;
     onOpenSummary: (levelId: Level["id"]) => void;
     levels: Level[];
+    locked: boolean;
 };
 
 export function Sidebar({
@@ -16,6 +17,7 @@ export function Sidebar({
     goToLevel,
     onOpenSummary,
     levels,
+    locked,
 }: SidebarProps) {
     const closeAndGo = (target: number) => {
         setSidebarOpen(() => false);
@@ -27,20 +29,32 @@ export function Sidebar({
         onOpenSummary(levelId);
     };
 
+    // While a modal/summary overlay is open, the sidebar should behave as
+    // if it's collapsed and untouchable, regardless of its own open state.
+    const effectivelyOpen = sidebarOpen && !locked;
+
     return (
         <>
             <button
                 type="button"
-                className={`sidebar-toggle ${sidebarOpen ? "open" : ""}`}
+                className={`sidebar-toggle ${effectivelyOpen ? "open" : ""}`}
                 onClick={() => setSidebarOpen((value) => !value)}
                 aria-label="Toggle navigation"
+                disabled={locked}
+                aria-disabled={locked}
+                tabIndex={locked ? -1 : 0}
             >
                 <span className="toggle-line line-1" />
                 <span className="toggle-line line-2" />
                 <span className="toggle-line line-3" />
             </button>
 
-            <aside className={`sidebar ${sidebarOpen ? "open" : "collapsed"}`}>
+            <aside
+                className={`sidebar ${effectivelyOpen ? "open" : "collapsed"} ${
+                    locked ? "locked" : ""
+                }`}
+                inert={locked}
+            >
                 <div className="brand-block">
                     <p className="eyebrow">Ocean Portfolio</p>
                     <h2>Adam Bodicoat</h2>
@@ -63,25 +77,19 @@ export function Sidebar({
                         type="button"
                         onClick={() => closeAndSummarize("shallows")}
                     >
-                        Shallows summaries
+                        Shallows Summary
                     </button>
                     <button
                         type="button"
                         onClick={() => closeAndSummarize("twilight")}
                     >
-                        Twilight summaries
+                        Twilight Zone Summary
                     </button>
                     <button
                         type="button"
                         onClick={() => closeAndSummarize("midnight")}
                     >
-                        Midnight summaries
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => closeAndSummarize("hadal")}
-                    >
-                        Hadal summaries
+                        Midnight Zone Summary
                     </button>
 
                     <p className="nav-group">Levels</p>
