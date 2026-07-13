@@ -60,7 +60,11 @@ export function Sidebar({
                     <h2>Adam Bodicoat</h2>
                 </div>
 
-                <nav className="nav-list" aria-label="Quick navigation">
+                <nav
+                    className="nav-list"
+                    aria-label="Quick navigation"
+                    onWheel={(event) => event.stopPropagation()}
+                >
                     <p className="nav-group">About</p>
                     <button type="button" onClick={() => closeAndGo(0)}>
                         About me

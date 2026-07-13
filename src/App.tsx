@@ -76,10 +76,28 @@ export default function App() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    const levelRefs = useRef<(HTMLElement | null)[]>([]);
+
+    useEffect(() => {
+        const el = levelRefs.current[activeIndex];
+        if (el) el.scrollTop = 0;
+    }, [activeIndex]);
+
     const handleWheel = (event: ReactWheelEvent<HTMLDivElement>) => {
         const delta = event.deltaY;
         if (Math.abs(delta) < 15) {
             return;
+        }
+
+        const activeEl = levelRefs.current[activeIndexRef.current];
+        if (activeEl) {
+            const atTop = activeEl.scrollTop <= 1;
+            const atBottom =
+                activeEl.scrollTop + activeEl.clientHeight >=
+                activeEl.scrollHeight - 1;
+
+            if (delta > 0 && !atBottom) return;
+            if (delta < 0 && !atTop) return;
         }
 
         const now = Date.now();
@@ -94,6 +112,38 @@ export default function App() {
         if (delta > 0) {
             goToLevel(activeIndexRef.current + 1);
         } else if (delta < 0) {
+            goToLevel(activeIndexRef.current - 1);
+        }
+    };
+
+    const touchStartYRef = useRef<number | null>(null);
+    const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+        touchStartYRef.current = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+        if (touchStartYRef.current === null) return;
+
+        const endY = event.changedTouches[0].clientY;
+        const diff = touchStartYRef.current - endY;
+        touchStartYRef.current = null;
+
+        if (Math.abs(diff) < 60) return;
+
+        const activeEl = levelRefs.current[activeIndexRef.current];
+        if (activeEl) {
+            const atTop = activeEl.scrollTop <= 1;
+            const atBottom =
+                activeEl.scrollTop + activeEl.clientHeight >=
+                activeEl.scrollHeight - 1;
+
+            if (diff > 0 && !atBottom) return;
+            if (diff < 0 && !atTop) return;
+        }
+
+        if (diff > 0) {
+            goToLevel(activeIndexRef.current + 1);
+        } else {
             goToLevel(activeIndexRef.current - 1);
         }
     };
@@ -141,7 +191,13 @@ export default function App() {
     const isOverlayOpen = Boolean(selectedFish) || Boolean(summaryLevelId);
 
     return (
-        <div className="app-shell" onWheel={handleWheel} tabIndex={0}>
+        <div
+            className="app-shell"
+            onWheel={handleWheel}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            tabIndex={0}
+        >
             <Sidebar
                 sidebarOpen={sidebarOpen}
                 setSidebarOpen={setSidebarOpen}
@@ -162,6 +218,9 @@ export default function App() {
                     return (
                         <section
                             key={level.id}
+                            ref={(el) => {
+                                levelRefs.current[index] = el;
+                            }}
                             className={`level level-${level.id}`}
                         >
                             <div className="level-backdrop" />

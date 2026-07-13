@@ -2,12 +2,13 @@
     position: relative;
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     background: linear-gradient(180deg, #06131f 0%, #0d2338 45%, #07111d 100%);
     color: #f8fafc;
     cursor: default;
     overscroll-behavior: none;
-    touch-action: none;
+    touch-action: pan-y pinch-zoom;
 }
 
 .eyebrow {

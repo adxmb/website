@@ -1,6 +1,6 @@
 .fish-layer {
     position: absolute;
-    inset: 0;
+    inset: 0 4% 0 4%;
     pointer-events: none;
 }
 
@@ -41,6 +41,7 @@
     padding: 0;
     cursor: pointer;
     pointer-events: auto;
+    touch-action: manipulation;
 }
 
 .fish-btn:hover,
@@ -65,6 +66,11 @@
 .fish-btn:focus-visible .fish-visual {
     transform: scaleX(var(--swim-direction, 1)) scale(1.08);
     filter: drop-shadow(0 12px 24px rgba(125, 211, 252, 0.45));
+}
+
+.fish-btn:active .fish-visual {
+    transform: scaleX(var(--swim-direction, 1)) scale(1.08);
+    filter: drop-shadow(0, 12px 24px rgba(125, 211, 252, 0.45));
 }
 
 .fish-emoji {

@@ -1,16 +1,19 @@
 .scene {
     position: relative;
     height: 100vh;
+    height: 100dvh;
     transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .level {
     position: relative;
     height: 100vh;
+    height: 100dvh;
     width: 100vw;
     padding: 32px clamp(24px, 5vw, 64px);
     box-sizing: border-box;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     align-items: center;
     justify-content: center;

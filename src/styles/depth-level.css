@@ -33,6 +33,10 @@
     max-width: 540px;
 }
 
+.panel-text h3:last-child {
+    margin-bottom: 0;
+}
+
 .panel-facts {
     display: flex;
     flex-direction: column;
