@@ -44,8 +44,9 @@ export function SurfaceLevel({ goToLevel }: SurfaceLevelProps) {
                 <article className="info-card" id="contact">
                     <h3>Contact</h3>
                     <p>
-                        Open to collaborations that value clarity, atmosphere,
-                        and a strong sense of pace.
+                        Feel free to get in contact with me by email
+                        (adam.r.bodicoat@gmail.com) or LinkedIn
+                        (linkedin.com/in/adam-bodicoat/).
                     </p>
                 </article>
             </div>

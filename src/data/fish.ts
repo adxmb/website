@@ -1,9 +1,9 @@
 import type { Fish, Level } from "../types";
 
-import swordfish from "../assets/shallows/swordfish.png";
 import turtle from "../assets/shallows/turtle.png";
 import dolphin from "../assets/shallows/hectors-dolphin.png";
 import mantaray from "../assets/shallows/mantaray.png";
+import hammerhead from "../assets/shallows/hammerhead.png";
 
 import octopus from "../assets/twilight/octopus.png";
 import jellyfish from "../assets/twilight/jellyfish.png";
@@ -16,12 +16,12 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
     surface: [],
     shallows: [
         {
-            id: "4",
+            id: "1",
             projectId: "neural-network",
             emoji: "🦈",
             imageSrc: mantaray,
             x: 23,
-            y: -30,
+            y: -20,
             duration: 13,
             size: 130,
             swimPattern: "glide",
@@ -29,17 +29,6 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
         {
             id: "2",
             projectId: "llm-test-oracles",
-            emoji: "🐟",
-            imageSrc: dolphin,
-            x: 82,
-            y: 114,
-            duration: 12,
-            size: 140,
-            swimPattern: "glide",
-        },
-        {
-            id: "3",
-            projectId: "plantr",
             emoji: "🐡",
             imageSrc: turtle,
             x: 74,
@@ -49,14 +38,25 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
             swimPattern: "swoop",
         },
         {
-            id: "1",
-            projectId: "northstar-studio",
+            id: "3",
+            projectId: "plantr",
+            emoji: "🐟",
+            imageSrc: dolphin,
+            x: 82,
+            y: 114,
+            duration: 12,
+            size: 165,
+            swimPattern: "glide",
+        },
+        {
+            id: "4",
+            projectId: "portfolio-website",
             emoji: "🐠",
-            imageSrc: swordfish,
+            imageSrc: hammerhead,
             x: 2,
             y: 122,
             duration: 7,
-            size: 125,
+            size: 160,
             swimPattern: "dart",
         },
     ],
@@ -80,7 +80,7 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
             x: 38,
             y: 105,
             duration: 12,
-            size: 90,
+            size: 98,
             swimPattern: "dart",
         },
         {
@@ -104,7 +104,7 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
             x: 15,
             y: 105,
             duration: 14,
-            size: 240,
+            size: 200,
             swimPattern: "drift",
         },
         {
