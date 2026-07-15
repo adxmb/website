@@ -63,7 +63,7 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
     twilight: [
         {
             id: "5",
-            projectId: "moonbeam-maps",
+            projectId: "undergraduate",
             emoji: "🪼",
             imageSrc: jellyfish,
             x: 24,
@@ -73,19 +73,8 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
             swimPattern: "drift",
         },
         {
-            id: "6",
-            projectId: "echo-deck",
-            emoji: "🐙",
-            imageSrc: octopus,
-            x: 38,
-            y: 105,
-            duration: 12,
-            size: 98,
-            swimPattern: "dart",
-        },
-        {
             id: "7",
-            projectId: "harbor-notes",
+            projectId: "jane-street",
             emoji: "🐬",
             imageSrc: shark,
             x: 80,
@@ -93,6 +82,17 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
             duration: 7,
             size: 160,
             swimPattern: "swoop",
+        },
+        {
+            id: "6",
+            projectId: "llm-test-oracles",
+            emoji: "🐙",
+            imageSrc: octopus,
+            x: 38,
+            y: 105,
+            duration: 12,
+            size: 98,
+            swimPattern: "dart",
         },
     ],
     midnight: [

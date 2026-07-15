@@ -37,7 +37,7 @@
 .intro-card p,
 .info-card p {
     margin: 0;
-    max-width: 58ch;
+    max-width: 80ch;
     color: rgba(241, 245, 249, 0.92);
 }
 

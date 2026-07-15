@@ -1,3 +1,5 @@
+const EMAIL = "adam.r.bodicoat@gmail.com";
+
 type SurfaceLevelProps = {
     goToLevel: (target: number) => void;
 };
@@ -26,7 +28,9 @@ export function SurfaceLevel({ goToLevel }: SurfaceLevelProps) {
                     <button
                         type="button"
                         className="ghost-link secondary"
-                        onClick={() => goToLevel(0)}
+                        onClick={() => {
+                            window.location.href = `mailto:${EMAIL}`;
+                        }}
                     >
                         Say hello
                     </button>
@@ -35,13 +39,26 @@ export function SurfaceLevel({ goToLevel }: SurfaceLevelProps) {
 
             <div className="info-stack">
                 <article className="info-card" id="projects">
-                    <h3>What you will find</h3>
+                    <h3>How to explore</h3>
                     <p>
-                        Below you will find three ocean themed layers: a project
-                        showcase in the shallows, my past experience an
-                        education in the twilight zone, and some of my other
-                        interests and ventures in the midnight zone.
+                        Scroll or swipe down through three depths: projects in
+                        the shallows, my background in the twilight zone, and
+                        more below.
                     </p>
+                </article>
+                <article className="info-card" id="projects">
+                    <h3>Get in touch</h3>
+                    <p>
+                        Always happy to chat about a project, an opportunity, or
+                        just to say hi.
+                    </p>
+                    <br />
+                    <a
+                        href={`mailto:${EMAIL}`}
+                        className="ghost-link secondary"
+                    >
+                        Send an email
+                    </a>
                 </article>
             </div>
         </div>

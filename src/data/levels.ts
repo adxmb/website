@@ -46,7 +46,7 @@ export const levels: Level[] = [
         id: "midnight",
         title: "Midnight Zone",
         depth: "Midnight Zone",
-        intro: "Deep dives into systems, motion, and thoughtful interfaces.",
+        intro: "Some of the other things I've been getting up to outside of work.",
         accent: "#6d28d9",
         panel: {
             heading: "Where systems live",
