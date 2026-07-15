@@ -35,18 +35,12 @@ export function SurfaceLevel({ goToLevel }: SurfaceLevelProps) {
 
             <div className="info-stack">
                 <article className="info-card" id="projects">
-                    <h3>Projects</h3>
+                    <h3>What you will find</h3>
                     <p>
                         Below you will find three ocean themed layers: a project
-                        showcase in the shallows, ...
-                    </p>
-                </article>
-                <article className="info-card" id="contact">
-                    <h3>Contact</h3>
-                    <p>
-                        Feel free to get in contact with me by email
-                        (adam.r.bodicoat@gmail.com) or LinkedIn
-                        (linkedin.com/in/adam-bodicoat/).
+                        showcase in the shallows, my past experience an
+                        education in the twilight zone, and some of my other
+                        interests and ventures in the midnight zone.
                     </p>
                 </article>
             </div>

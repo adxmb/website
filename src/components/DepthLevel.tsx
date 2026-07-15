@@ -5,10 +5,22 @@ type DepthLevelProps = {
     level: Level;
     fishPool: Fish[];
     onOpenFish: (fish: Fish) => void;
+    projectNames: string[];
 };
 
-export function DepthLevel({ level, fishPool, onOpenFish }: DepthLevelProps) {
+export function DepthLevel({
+    level,
+    fishPool,
+    onOpenFish,
+    projectNames,
+}: DepthLevelProps) {
     const panel = level.panel;
+
+    const resolvedBody = panel
+        ? typeof panel.body === "function"
+            ? panel.body(projectNames)
+            : panel.body
+        : "";
 
     return (
         <div className="depth-copy">
@@ -22,7 +34,7 @@ export function DepthLevel({ level, fishPool, onOpenFish }: DepthLevelProps) {
                 <div className="depth-panel">
                     <div className="panel-text">
                         <h3>{panel.heading}</h3>
-                        {panel.body ? <p>{panel.body}</p> : null}
+                        {resolvedBody ? <p>{resolvedBody}</p> : null}
                     </div>
                     {panel.facts.length > 0 ? (
                         <div className="panel-facts">

@@ -23,7 +23,7 @@ export type Fish = {
 
 export type LevelPanel = {
     heading: string;
-    body: string;
+    body?: string | ((projectNames: string[]) => string);
     facts: { label: string; value: string }[];
 };
 

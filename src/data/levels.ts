@@ -1,4 +1,5 @@
 import type { Level } from "../types";
+import { formatList } from "../utils/formatList";
 
 export const levels: Level[] = [
     {
@@ -12,14 +13,17 @@ export const levels: Level[] = [
         id: "shallows",
         title: "Shallows",
         depth: "Shallows",
-        intro: "An overview of personal projects I have worked on through the years.",
+        intro: "An overview of personal projects and research I have worked on through the years.",
         accent: "#38bdf8",
         panel: {
-            heading: "Built in the light",
-            body: "Sunlight still reaches this far down, so the work here favours clarity: finished products, clean interfaces, and ideas built to be used rather than just admired.",
+            heading: "Projects and Research",
+            body: (projectNames) =>
+                `A few personal projects from outside my sutdies or work live here, including ${formatList(
+                    projectNames,
+                )}. Tap anything swimming past for more details.`,
             facts: [
-                { label: "Focus", value: "Usability and polish" },
-                { label: "Energy", value: "Bright, direct, practical" },
+                { label: "Focus", value: "Personal projects and curiosity" },
+                { label: "Energy", value: "Exploratory, self-directed" },
             ],
         },
     },
@@ -27,14 +31,14 @@ export const levels: Level[] = [
         id: "twilight",
         title: "Twilight Zone",
         depth: "Twilight Zone",
-        intro: "Explorations that sit between play and production.",
+        intro: "My work experience and educational background.",
         accent: "#818cf8",
         panel: {
-            heading: "Half-lit ideas",
-            body: "Light is fading here, and so is the certainty. These are the projects that started as a question - prototypes, toolkits, and interface studies thathaven't fully decided what they want to be yet.",
+            heading: "Professional Background",
+            body: "Here you will find details about my education, and the roles I've worked in past and current. Tap anything swimming past for more details.",
             facts: [
-                { label: "Focus", value: "Exploration and play" },
-                { label: "Energy", value: "Curious, unresolved" },
+                { label: "Focus", value: "Education and work history" },
+                { label: "Energy", value: "Structured, professional" },
             ],
         },
     },

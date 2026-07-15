@@ -8,7 +8,11 @@ import "./App.css";
 import type { Fish, Level, Project } from "./types";
 import { levels } from "./data/levels";
 import { fishByLevel } from "./data/fish";
-import { projectsById, getUniqueProjectsForFish } from "./data/projects";
+import {
+    projectsById,
+    buildProjectIdsByLevel,
+    getUniqueProjects,
+} from "./data/projects";
 import { Sidebar } from "./components/Sidebar";
 import { SurfaceLevel } from "./components/SurfaceLevel";
 import { DepthLevel } from "./components/DepthLevel";
@@ -174,6 +178,8 @@ export default function App() {
         window.setTimeout(() => setSummaryLevelId(null), 700);
     };
 
+    const projectIdsByLevel = buildProjectIdsByLevel(fishByLevel);
+
     const selectedProject: Project | null = selectedFish
         ? (projectsById[selectedFish.projectId] ?? null)
         : null;
@@ -183,7 +189,7 @@ export default function App() {
         : null;
 
     const summaryProjects = summaryLevelId
-        ? getUniqueProjectsForFish(
+        ? getUniqueProjects(
               fishByLevel[summaryLevelId].map((fish) => fish.projectId),
           )
         : [];
@@ -214,6 +220,9 @@ export default function App() {
             >
                 {levels.map((level, index) => {
                     const fishPool = fishByLevel[level.id];
+                    const levelProjectNames = getUniqueProjects(
+                        projectIdsByLevel[level.id],
+                    ).map((project) => project.name);
 
                     return (
                         <section
@@ -236,6 +245,7 @@ export default function App() {
                                     level={level}
                                     fishPool={fishPool}
                                     onOpenFish={openFish}
+                                    projectNames={levelProjectNames}
                                 />
                             )}
                         </section>

@@ -1,4 +1,4 @@
-import type { Project } from "../types";
+import type { Fish, Level, Project } from "../types";
 
 export const projectsById: Record<string, Project> = {
     "neural-network": {
@@ -102,6 +102,33 @@ export const projectsById: Record<string, Project> = {
         spotlightLabel: "Project spotlight",
     },
 };
+
+export function buildProjectIdsByLevel(
+    fishByLevel: Record<Level["id"], Fish[]>,
+): Record<Level["id"], string[]> {
+    const result = {} as Record<Level["id"], string[]>;
+
+    for (const levelId of Object.keys(fishByLevel) as Level["id"][]) {
+        result[levelId] = fishByLevel[levelId].map((fish) => fish.projectId);
+    }
+
+    return result;
+}
+
+export function getUniqueProjects(projectIds: string[]): Project[] {
+    const seen = new Set<string>();
+    const result: Project[] = [];
+
+    for (const id of projectIds) {
+        if (seen.has(id)) continue;
+        const project = projectsById[id];
+        if (!project) continue;
+        seen.add(id);
+        result.push(project);
+    }
+
+    return result;
+}
 
 export function getUniqueProjectsForFish(fishProjectIds: string[]): Project[] {
     const seen = new Set<string>();
