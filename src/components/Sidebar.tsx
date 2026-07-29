@@ -97,16 +97,22 @@ export function Sidebar({
                     </button>
 
                     <p className="nav-group">Levels</p>
-                    {levels.map((level, index) => (
-                        <button
-                            key={level.id}
-                            type="button"
-                            className={index === activeIndex ? "active" : ""}
-                            onClick={() => closeAndGo(index)}
-                        >
-                            {level.title}
-                        </button>
-                    ))}
+                    {levels.map((level, index) => {
+                        if (level.id === "hadal") return null;
+
+                        return (
+                            <button
+                                key={level.id}
+                                type="button"
+                                className={
+                                    index === activeIndex ? "active" : ""
+                                }
+                                onClick={() => closeAndGo(index)}
+                            >
+                                {level.title}
+                            </button>
+                        );
+                    })}
                 </nav>
             </aside>
         </>

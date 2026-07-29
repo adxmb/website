@@ -50,7 +50,7 @@ export const levels: Level[] = [
         accent: "#6d28d9",
         panel: {
             heading: "Where systems live",
-            body: "No sunlight reaches this deep - what's left is structure. These projects are about the architecture underneath an interface: how content flows, how motion behaves, how the pieces holdtogether.",
+            body: "Down here live some of my current interests outside of work beyond development and engineering.",
             facts: [
                 { label: "Focus", value: "Systems and structure" },
                 { label: "Energy", value: "Deliberate, quiet" },

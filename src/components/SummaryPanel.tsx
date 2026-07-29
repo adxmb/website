@@ -27,7 +27,7 @@ export function SummaryPanel({
                 <div className="summary-header">
                     <div>
                         <p className="eyebrow">{level.depth}</p>
-                        <h3>{level.title} summaries</h3>
+                        <h3>{level.title} Summaries</h3>
                     </div>
                     <button
                         type="button"

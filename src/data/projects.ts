@@ -72,17 +72,6 @@ export const projectsById: Record<string, Project> = {
         link: "https://github.com/LocalhostLtd/DEV-Hackathon-2024",
         spotlightLabel: "Hackathon Project",
     },
-    "harbor-notes": {
-        id: "harbor-notes",
-        name: "Harbor Notes",
-        title: "Writing Rituals",
-        description:
-            "A gentle place to archive quick ideas, notes, and mood boards for future projects.",
-        stack: ["Notes", "Archive", "Reflection"],
-        link: "https://github.com",
-        linkLabel: "See Notes",
-        spotlightLabel: "Field notes",
-    },
     "deep-current": {
         id: "deep-current",
         name: "Deep Current",

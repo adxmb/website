@@ -11,11 +11,12 @@ export function SurfaceLevel({ goToLevel }: SurfaceLevelProps) {
                 <p className="eyebrow">About me</p>
                 <h1>Hi, I'm Adam!</h1>
                 <p>
-                    I'm a software engineer from the University of Auckland. I
-                    like making things that have an impact using technology to
-                    improve learning, understanding, and efficiency in everyday
-                    life. I'm eager to tackle new challenges, expand my
-                    skillset, and apply my knowledge in different ways.
+                    I'm a software engineer who likes building things with real
+                    impact – tools that make learning, understanding, or
+                    everyday tasks a little easier. I'm always looking to tackle
+                    new challenges and apply what I know in new ways. I'd rather
+                    stay curious than comfortable, and I'm always keen to learn
+                    something new.
                 </p>
                 <div className="action-row">
                     <button
