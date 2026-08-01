@@ -25,7 +25,7 @@ export function ContactModal({ modalVisible, onClose }: ContactModalProps) {
                     ×
                 </button>
                 <p className="eyebrow">Say Hello</p>
-                <h3>Get in touch</h3>
+                <h3>Get In Touch</h3>
                 <p>
                     Check out my GitHub, LinkedIn, or Letterboxd, or send me an
                     email directly

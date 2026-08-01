@@ -4,6 +4,7 @@
 @import "./styles/scene.css";
 @import "./styles/surface-level.css";
 @import "./styles/depth-level.css";
+@import "./styles/panel-framed.css";
 @import "./styles/effects.css";
 @import "./styles/fish.css";
 @import "./styles/animations.css";

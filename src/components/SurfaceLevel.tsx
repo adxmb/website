@@ -6,7 +6,10 @@ type SurfaceLevelProps = {
 export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
     return (
         <div className="surface-copy">
-            <div className="intro-card">
+            <div
+                className="intro-card panel-soft-glow"
+                style={{ ["--panel-accent" as string]: "#7dd3fc" }}
+            >
                 <p className="eyebrow">About me</p>
                 <h1>Hi, I'm Adam!</h1>
                 <p>
@@ -36,7 +39,11 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
             </div>
 
             <div className="info-stack">
-                <article className="info-card" id="projects">
+                <article
+                    className="info-card panel-soft-glow"
+                    id="explore"
+                    style={{ ["--panel-accent" as string]: "#7dd3fc" }}
+                >
                     <h3>How to explore</h3>
                     <p>
                         Scroll or swipe down through three depths: projects in
@@ -44,7 +51,11 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
                         more below.
                     </p>
                 </article>
-                <article className="info-card" id="projects">
+                <article
+                    className="info-card panel-soft-glow"
+                    id="contact"
+                    style={{ ["--panel-accent" as string]: "#7dd3fc" }}
+                >
                     <h3>Get in touch</h3>
                     <p>
                         Always happy to chat about a project, an opportunity, or

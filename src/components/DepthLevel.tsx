@@ -22,6 +22,9 @@ export function DepthLevel({
             : panel.body
         : "";
 
+    const useFrame = level.id !== "hadal";
+    const useSoftGlow = level.id === "shallows";
+
     return (
         <div className="depth-copy">
             <div className="depth-intro">
@@ -31,7 +34,10 @@ export function DepthLevel({
             </div>
 
             {panel ? (
-                <div className="depth-panel">
+                <div
+                    className={`depth-panel ${useFrame ? "panel-framed" : ""} ${useSoftGlow ? "panel-soft-glow" : ""}`}
+                    style={{ ["--panel-accent" as string]: level.accent }}
+                >
                     <div className="panel-text">
                         <h3>{panel.heading}</h3>
                         {resolvedBody ? <p>{resolvedBody}</p> : null}
