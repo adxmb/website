@@ -30,7 +30,7 @@ export function FishItem({ fish, onOpen }: FishItemProps) {
                     {fish.imageSrc ? (
                         <img
                             src={fish.imageSrc}
-                            alt={fish.name}
+                            alt={fish.id}
                             className="fish-image"
                         />
                     ) : (

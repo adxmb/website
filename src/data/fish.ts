@@ -98,7 +98,7 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
     midnight: [
         {
             id: "8",
-            projectId: "deep-current",
+            projectId: "current-activities",
             emoji: "🐳",
             imageSrc: spermwhale,
             x: 15,
@@ -109,7 +109,7 @@ export const fishByLevel: Record<Level["id"], Fish[]> = {
         },
         {
             id: "9",
-            projectId: "blackwater-ui",
+            projectId: "movies",
             emoji: "🦑",
             imageSrc: squid,
             x: 82,

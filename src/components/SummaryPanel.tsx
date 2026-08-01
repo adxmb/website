@@ -27,7 +27,7 @@ export function SummaryPanel({
                 <div className="summary-header">
                     <div>
                         <p className="eyebrow">{level.depth}</p>
-                        <h3>{level.title} Summaries</h3>
+                        <h3>{level.title} Summary</h3>
                     </div>
                     <button
                         type="button"
@@ -53,7 +53,28 @@ export function SummaryPanel({
                                     {project.spotlightLabel}
                                 </p>
                                 <h4>{project.title}</h4>
-                                <p>{project.description}</p>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        gap: "10px",
+                                    }}
+                                >
+                                    {project.description
+                                        .split("\n")
+                                        .map((line, index) => (
+                                            <p
+                                                key={index}
+                                                style={{
+                                                    margin: 0,
+                                                    lineHeight: "1.8",
+                                                }}
+                                                dangerouslySetInnerHTML={{
+                                                    __html: line,
+                                                }}
+                                            />
+                                        ))}
+                                </div>
                                 <div className="chip-row">
                                     {project.stack.map((item) => (
                                         <span key={item} className="chip">

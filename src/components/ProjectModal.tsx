@@ -27,7 +27,21 @@ export function ProjectModal({
                 </button>
                 <p className="eyebrow">{project.spotlightLabel}</p>
                 <h3>{project.title}</h3>
-                <p>{project.description}</p>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                    }}
+                >
+                    {project.description.split("\n").map((line, index) => (
+                        <p
+                            key={index}
+                            style={{ margin: 0, lineHeight: "1.8" }}
+                            dangerouslySetInnerHTML={{ __html: line }}
+                        />
+                    ))}
+                </div>
                 <div className="chip-row">
                     {project.stack.map((item) => (
                         <span key={item} className="chip">

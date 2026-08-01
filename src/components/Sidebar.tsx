@@ -76,8 +76,14 @@ export function Sidebar({
                     <button type="button" onClick={() => closeAndGo(0)}>
                         About me
                     </button>
-                    <button type="button" onClick={() => closeAndGo(0)}>
+                    <button type="button" onClick={() => closeAndGo(1)}>
+                        Projects
+                    </button>
+                    <button type="button" onClick={() => closeAndGo(2)}>
                         Experience
+                    </button>
+                    <button type="button" onClick={() => closeAndGo(3)}>
+                        Life Updates
                     </button>
                     <button type="button" onClick={closeAndContact}>
                         Contact

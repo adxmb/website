@@ -22,8 +22,8 @@ export const levels: Level[] = [
                     projectNames,
                 )}. Tap anything swimming past for more details.`,
             facts: [
-                { label: "Focus", value: "Personal projects and curiosity" },
-                { label: "Energy", value: "Exploratory, self-directed" },
+                { label: "Focus", value: "Personal Projects and Curiosity" },
+                { label: "Energy", value: "Exploratory, Self-directed" },
             ],
         },
     },
@@ -37,8 +37,8 @@ export const levels: Level[] = [
             heading: "Professional Background",
             body: "Here you will find details about my education, and the roles I've worked in past and current. Tap anything swimming past for more details.",
             facts: [
-                { label: "Focus", value: "Education and work history" },
-                { label: "Energy", value: "Structured, professional" },
+                { label: "Focus", value: "Education and Work History" },
+                { label: "Energy", value: "Structured, Professional" },
             ],
         },
     },
@@ -49,11 +49,11 @@ export const levels: Level[] = [
         intro: "Some of the other things I've been getting up to outside of work.",
         accent: "#6d28d9",
         panel: {
-            heading: "Where systems live",
-            body: "Down here live some of my current interests outside of work beyond development and engineering.",
+            heading: "What I'm Up To",
+            body: "Down here are some of the things I've been spending time on outside of work or studies.",
             facts: [
-                { label: "Focus", value: "Systems and structure" },
-                { label: "Energy", value: "Deliberate, quiet" },
+                { label: "Focus", value: "Everyday Side Quests" },
+                { label: "Energy", value: "Personal, Interests" },
             ],
         },
     },
