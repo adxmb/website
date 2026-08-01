@@ -51,3 +51,20 @@
     color: #bae6fd;
     font-size: 0.9rem;
 }
+
+.contact-card .ghost-link {
+    margin-top: 8px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.contact-links .ghost-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}

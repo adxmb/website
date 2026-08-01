@@ -6,6 +6,7 @@ type SidebarProps = {
     activeIndex: number;
     goToLevel: (target: number) => void;
     onOpenSummary: (levelId: Level["id"]) => void;
+    onOpenContact: () => void;
     levels: Level[];
     locked: boolean;
 };
@@ -16,6 +17,7 @@ export function Sidebar({
     activeIndex,
     goToLevel,
     onOpenSummary,
+    onOpenContact,
     levels,
     locked,
 }: SidebarProps) {
@@ -27,6 +29,11 @@ export function Sidebar({
     const closeAndSummarize = (levelId: Level["id"]) => {
         setSidebarOpen(() => false);
         onOpenSummary(levelId);
+    };
+
+    const closeAndContact = () => {
+        setSidebarOpen(() => false);
+        onOpenContact();
     };
 
     // While a modal/summary overlay is open, the sidebar should behave as
@@ -72,7 +79,7 @@ export function Sidebar({
                     <button type="button" onClick={() => closeAndGo(0)}>
                         Experience
                     </button>
-                    <button type="button" onClick={() => closeAndGo(0)}>
+                    <button type="button" onClick={closeAndContact}>
                         Contact
                     </button>
 

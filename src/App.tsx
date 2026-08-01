@@ -17,6 +17,7 @@ import { Sidebar } from "./components/Sidebar";
 import { SurfaceLevel } from "./components/SurfaceLevel";
 import { DepthLevel } from "./components/DepthLevel";
 import { ProjectModal } from "./components/ProjectModal";
+import { ContactModal } from "./components/ContactModal";
 import { SummaryPanel } from "./components/SummaryPanel";
 import { LevelEffects } from "./components/LevelEffects";
 
@@ -29,6 +30,21 @@ export default function App() {
         null,
     );
     const [summaryVisible, setSummaryVisible] = useState(false);
+    const [contactVisible, setContactVisible] = useState(false);
+    const [contactOpen, setContactOpen] = useState(false);
+
+    const openContact = () => {
+        setContactOpen(true);
+        setContactVisible(false);
+        window.requestAnimationFrame(() => {
+            setContactVisible(true);
+        });
+    };
+
+    const closeContact = () => {
+        setContactVisible(false);
+        window.setTimeout(() => setContactOpen(false), 700);
+    };
 
     const activeIndexRef = useRef(activeIndex);
     const lastWheelTimeRef = useRef(0);
@@ -70,8 +86,10 @@ export default function App() {
             if (event.key === "Escape") {
                 setSidebarOpen(false);
                 setModalVisible(false);
+                setContactVisible(false);
                 window.setTimeout(() => setSelectedFish(null), 220);
                 closeSummary();
+                closeContact();
             }
         };
 
@@ -194,7 +212,8 @@ export default function App() {
           )
         : [];
 
-    const isOverlayOpen = Boolean(selectedFish) || Boolean(summaryLevelId);
+    const isOverlayOpen =
+        Boolean(selectedFish) || Boolean(summaryLevelId) || contactOpen;
 
     return (
         <div
@@ -210,6 +229,7 @@ export default function App() {
                 activeIndex={activeIndex}
                 goToLevel={goToLevel}
                 onOpenSummary={openSummary}
+                onOpenContact={openContact}
                 levels={levels}
                 locked={isOverlayOpen}
             />
@@ -239,7 +259,10 @@ export default function App() {
                             />
 
                             {level.id === "surface" ? (
-                                <SurfaceLevel goToLevel={goToLevel} />
+                                <SurfaceLevel
+                                    goToLevel={goToLevel}
+                                    onOpenContact={openContact}
+                                />
                             ) : (
                                 <DepthLevel
                                     level={level}
@@ -267,6 +290,13 @@ export default function App() {
                     projects={summaryProjects}
                     visible={summaryVisible}
                     onClose={closeSummary}
+                />
+            ) : null}
+
+            {contactOpen ? (
+                <ContactModal
+                    modalVisible={contactVisible}
+                    onClose={closeContact}
                 />
             ) : null}
         </div>

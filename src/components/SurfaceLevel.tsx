@@ -1,10 +1,9 @@
-const EMAIL = "adam.r.bodicoat@gmail.com";
-
 type SurfaceLevelProps = {
     goToLevel: (target: number) => void;
+    onOpenContact: () => void;
 };
 
-export function SurfaceLevel({ goToLevel }: SurfaceLevelProps) {
+export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
     return (
         <div className="surface-copy">
             <div className="intro-card">
@@ -29,11 +28,9 @@ export function SurfaceLevel({ goToLevel }: SurfaceLevelProps) {
                     <button
                         type="button"
                         className="ghost-link secondary"
-                        onClick={() => {
-                            window.location.href = `mailto:${EMAIL}`;
-                        }}
+                        onClick={onOpenContact}
                     >
-                        Say hello
+                        Say Hello
                     </button>
                 </div>
             </div>
@@ -54,12 +51,13 @@ export function SurfaceLevel({ goToLevel }: SurfaceLevelProps) {
                         just to say hi.
                     </p>
                     <br />
-                    <a
-                        href={`mailto:${EMAIL}`}
+                    <button
+                        type="button"
                         className="ghost-link secondary"
+                        onClick={onOpenContact}
                     >
-                        Send an email
-                    </a>
+                        Get In Contact
+                    </button>
                 </article>
             </div>
         </div>
