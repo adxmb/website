@@ -5,6 +5,7 @@ type DepthLevelProps = {
     level: Level;
     fishPool: Fish[];
     onOpenFish: (fish: Fish) => void;
+    onOpenSummary: (levelId: Level["id"]) => void;
     projectNames: string[];
 };
 
@@ -12,6 +13,7 @@ export function DepthLevel({
     level,
     fishPool,
     onOpenFish,
+    onOpenSummary,
     projectNames,
 }: DepthLevelProps) {
     const panel = level.panel;
@@ -24,6 +26,7 @@ export function DepthLevel({
 
     const useFrame = level.id !== "hadal";
     const useSoftGlow = level.id === "shallows";
+    const showSummaryButton = level.id !== "hadal";
 
     return (
         <div className="depth-copy">
@@ -41,6 +44,15 @@ export function DepthLevel({
                     <div className="panel-text">
                         <h3>{panel.heading}</h3>
                         {resolvedBody ? <p>{resolvedBody}</p> : null}
+                        {showSummaryButton ? (
+                            <button
+                                type="button"
+                                className="ghost-link secondary panel-summary-btn"
+                                onClick={() => onOpenSummary(level.id)}
+                            >
+                                See Summary
+                            </button>
+                        ) : null}
                     </div>
                     {panel.facts.length > 0 ? (
                         <div className="panel-facts">

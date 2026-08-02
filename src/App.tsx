@@ -278,6 +278,7 @@ export default function App() {
                                     level={level}
                                     fishPool={fishPool}
                                     onOpenFish={openFish}
+                                    onOpenSummary={openSummary}
                                     projectNames={levelProjectNames}
                                 />
                             )}

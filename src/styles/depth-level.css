@@ -56,3 +56,7 @@
 .panel-facts strong {
     color: #7dd3fc;
 }
+
+.panel-summary-btn {
+    margin-top: 14px;
+}
