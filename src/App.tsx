@@ -246,7 +246,7 @@ export default function App() {
 
             <div
                 className="scene"
-                style={{ transform: `translateY(-${activeIndex * 100}vh)` }}
+                style={{ transform: `translateY(-${activeIndex * 100}dvh)` }}
             >
                 {levels.map((level, index) => {
                     const fishPool = fishByLevel[level.id];
