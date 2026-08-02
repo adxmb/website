@@ -139,14 +139,14 @@ export function HadalEye() {
                             x="0"
                             y="0"
                             width="300"
-                            height="154"
+                            height="165"
                         />
                         <rect
                             className="eyelid eyelid-bottom"
                             x="0"
-                            y="146"
+                            y="135"
                             width="300"
-                            height="154"
+                            height="165"
                         />
                     </g>
                 </g>

@@ -253,7 +253,8 @@
     }
 }
 
-.eyelid {
+.eyelid-top,
+.eyelid-bottom {
     fill: #000000;
     transform-box: fill-box;
 }
