@@ -58,7 +58,7 @@ export function ContactModal({ modalVisible, onClose }: ContactModalProps) {
                         <SiLetterboxd size={18} />
                         Letterboxd
                     </a>
-                    <a href={EMAIL} className="ghost-link">
+                    <a href={`mailto:${EMAIL}`} className="ghost-link">
                         <Mail size={18} />
                         Email
                     </a>

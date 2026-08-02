@@ -10,24 +10,24 @@
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 999px;
     padding: 12px 10px;
-    background: rgba(2, 6, 23, 0.78);
+    background: rgba(2, 6, 23, 0.42);
     color: white;
     backdrop-filter: blur(14px);
     cursor: pointer;
     transition:
         transform 0.25s ease,
         background 0.25s ease,
-        opacity 0.4s ease;
+        opacity 0.6s ease;
     touch-action: manipulation;
 }
 
 .sidebar-toggle:hover {
     transform: scale(1.03);
-    background: rgba(3, 10, 26, 0.9);
+    background: rgba(3, 10, 26, 0.7);
 }
 
 .sidebar-toggle:disabled {
-    opacity: 0.35;
+    opacity: 0.15;
     cursor: default;
     pointer-events: none;
 }
@@ -39,8 +39,8 @@
     border-radius: 999px;
     background: white;
     transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
+        transform 0.45s ease,
+        opacity 0.45s ease;
     transform-origin: center;
 }
 

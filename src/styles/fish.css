@@ -69,8 +69,8 @@
 }
 
 .fish-btn:active .fish-visual {
-    transform: scaleX(var(--swim-direction, 1)) scale(1.08);
-    filter: drop-shadow(0, 12px 24px rgba(125, 211, 252, 0.45));
+    transform: scaleX(var(--swim-direction, 1)) scale(0.95);
+    filter: drop-shadow(0 6px 12px rgba(125, 211, 252, 0.35));
 }
 
 .fish-emoji {

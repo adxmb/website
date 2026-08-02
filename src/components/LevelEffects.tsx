@@ -63,14 +63,14 @@ export function LevelEffects({ levelId, isActive }: LevelEffectsProps) {
         case "twilight":
             return (
                 <>
-                    <MarineSnow count={Math.round(62 * scale)} />
+                    <MarineSnow count={Math.round(52 * scale)} />
                 </>
             );
 
         case "midnight":
             return (
                 <>
-                    <MarineSnow count={Math.round(24 * scale)} />
+                    <MarineSnow count={Math.round(34 * scale)} />
                     <Bioluminescence count={Math.round(3 * scale)} />
                 </>
             );
@@ -78,7 +78,7 @@ export function LevelEffects({ levelId, isActive }: LevelEffectsProps) {
         case "hadal":
             return (
                 <>
-                    <MarineSnow count={Math.round(124 * scale)} />
+                    <MarineSnow count={Math.round(114 * scale)} />
                     <HadalEye />
                     {isActive && hasFinePointer ? <FlashlightOverlay /> : null}
                 </>

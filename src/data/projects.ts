@@ -127,18 +127,3 @@ export function getUniqueProjects(projectIds: string[]): Project[] {
 
     return result;
 }
-
-export function getUniqueProjectsForFish(fishProjectIds: string[]): Project[] {
-    const seen = new Set<string>();
-    const result: Project[] = [];
-
-    for (const id of fishProjectIds) {
-        if (seen.has(id)) continue;
-        const project = projectsById[id];
-        if (!project) continue;
-        seen.add(id);
-        result.push(project);
-    }
-
-    return result;
-}

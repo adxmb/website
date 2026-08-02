@@ -139,6 +139,8 @@
     animation-name: snow-fall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+
+    will-change: transform;
 }
 
 @keyframes snow-fall {
