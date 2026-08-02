@@ -66,7 +66,7 @@ export const projectsById: Record<string, Project> = {
         title: "AI Plant Matcher",
         description:
             "A proof-of-concept web application created for the DEVs Hackathon with the theme Hack for Humanity." +
-            " Plantr uses AI to make plant discovery engaging by allowing users to match with recommended plants based on their" +
+            " <i>Plantr</i> uses AI to make plant discovery engaging by allowing users to match with recommended plants based on their" +
             " profile via Tinder-esque swiping. 1st Place in UoA DEVS Hackathon 2024.\n",
         stack: ["React", "Node.js", "OpenAI"],
         link: "https://github.com/LocalhostLtd/DEV-Hackathon-2024",
@@ -77,9 +77,9 @@ export const projectsById: Record<string, Project> = {
         name: "Current Activities",
         title: "What I'm Up To",
         description:
-            "Practising for piano diploma where I will be performing the following repertoire: <i>Liszt - Liebesträume no.3</i>, <i>Debussy - La plus que lente</i>," +
+            "Working towards a music diploma in piano where I will be performing the following repertoire: <i>Liszt - Liebesträume no.3</i>, <i>Debussy - La plus que lente</i>," +
             " <i>Wilkinson - Oiseaux d'eau</i>, <i>Chopin - Ballade no.1</i>, and <i>Rachmaninov/Kreisler - Liebesleid</i>.\n" +
-            "I've been attempting to perfect making <i>Choux au Craquelin</i> and a variety of different cakes and desserts " +
+            "I've been perfecting making <i>Choux au Craquelin</i> and variety of different cakes and desserts " +
             "experimenting with different ratios, flavours, and types of fillings.\n" +
             "Recently I've been travelling around the world, picked up volleyball and basketball, and have been dabbling in other creative hobbies like sketching, writing, and photography too.\n",
         stack: ["Side Questing", "Updates"],

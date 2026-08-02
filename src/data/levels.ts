@@ -18,7 +18,7 @@ export const levels: Level[] = [
         panel: {
             heading: "Projects and Research",
             body: (projectNames) =>
-                `A few personal projects from outside my sutdies or work live here, including ${formatList(
+                `A few personal projects from outside my studies or work live here, including ${formatList(
                     projectNames,
                 )}. Tap anything swimming past for more details.`,
             facts: [

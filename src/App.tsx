@@ -150,9 +150,19 @@ export default function App() {
         const diff = touchStartYRef.current - endY;
         touchStartYRef.current = null;
 
-        if (Math.abs(diff) < 60) return;
-
         const activeEl = levelRefs.current[activeIndexRef.current];
+
+        if (Math.abs(diff) < 60) {
+            if (activeEl) {
+                const mid = activeEl.scrollHeight / 2;
+                activeEl.scrollTo({
+                    top: activeEl.scrollTop < mid ? 0 : activeEl.scrollHeight,
+                    behavior: "smooth",
+                });
+            }
+            return;
+        }
+
         if (activeEl) {
             const atTop = activeEl.scrollTop <= 1;
             const atBottom =

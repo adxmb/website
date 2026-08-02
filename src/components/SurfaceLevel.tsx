@@ -16,9 +16,9 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
                     I'm a software engineer who likes building things with real
                     impact – tools that make learning, understanding, or
                     everyday tasks a little easier. I'm always looking to tackle
-                    new challenges and apply what I know in new ways. I'd rather
-                    stay curious than comfortable, and I'm always keen to learn
-                    something new.
+                    new challenges and apply what I know in new ways. I enjoy
+                    taking this curiousity beyond my work and am always keen to
+                    learn something new in my everyday life.
                 </p>
                 <div className="action-row">
                     <button
@@ -46,8 +46,8 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
                 >
                     <h3>How to explore</h3>
                     <p>
-                        Scroll or swipe down through three depths: projects in
-                        the shallows, my background in the twilight zone, and
+                        Scroll or swipe down through the three depths: projects
+                        in the shallows, my background in the twilight zone, and
                         more below.
                     </p>
                 </article>

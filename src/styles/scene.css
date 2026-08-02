@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    scroll-snap-type: y proximity;
 
     content-visibility: auto;
     contain-intrinsic-size: 100vw 100dvh;
