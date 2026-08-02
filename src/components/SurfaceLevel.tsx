@@ -44,7 +44,7 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
                     id="explore"
                     style={{ ["--panel-accent" as string]: "#7dd3fc" }}
                 >
-                    <h3>How to explore</h3>
+                    <h3>How to Explore</h3>
                     <p>
                         Scroll or swipe down through the three depths: projects
                         in the shallows, my background in the twilight zone, and
@@ -56,19 +56,20 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
                     id="contact"
                     style={{ ["--panel-accent" as string]: "#7dd3fc" }}
                 >
-                    <h3>Get in touch</h3>
+                    <h3>Get in Touch</h3>
                     <p>
                         Always happy to chat about a project, an opportunity, or
-                        just to say hi.
+                        just to say hi. Send an email or reach out on any of my
+                        other platforms.
                     </p>
-                    <br />
+                    {/* <br />
                     <button
                         type="button"
                         className="ghost-link secondary"
                         onClick={onOpenContact}
                     >
                         Get In Contact
-                    </button>
+                    </button> */}
                 </article>
             </div>
         </div>
