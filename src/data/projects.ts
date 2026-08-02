@@ -77,11 +77,11 @@ export const projectsById: Record<string, Project> = {
         name: "Current Activities",
         title: "What I'm Up To",
         description:
-            "Practicing for piano diploma where I will be performing the following repertoire: <i>Liszt - Liebesträume no.3</i>, <i>Debussy - La plus que lente</i>," +
-            " <i>Wilkinson - Oiseaux d’eau</i>, <i>Chopin - Ballade no.1</i>, and <i>Rachmaninov/Kreisler - Liebesleid</i>.\n" +
+            "Practising for piano diploma where I will be performing the following repertoire: <i>Liszt - Liebesträume no.3</i>, <i>Debussy - La plus que lente</i>," +
+            " <i>Wilkinson - Oiseaux d'eau</i>, <i>Chopin - Ballade no.1</i>, and <i>Rachmaninov/Kreisler - Liebesleid</i>.\n" +
             "I've been attempting to perfect making <i>Choux au Craquelin</i> and a variety of different cakes and desserts " +
             "experimenting with different ratios, flavours, and types of fillings.\n" +
-            "Recently I've been travelling around the world, picked up volleyball and basketball, and have been dabling other creative hobbies like sketching, writing, and photography too.\n",
+            "Recently I've been travelling around the world, picked up volleyball and basketball, and have been dabbling in other creative hobbies like sketching, writing, and photography too.\n",
         stack: ["Side Questing", "Updates"],
         spotlightLabel: "Side Quests",
     },
@@ -92,9 +92,9 @@ export const projectsById: Record<string, Project> = {
         description:
             "<b>12 Angry Men (1957)</b>, the biggest comeback in cinema history, just a compelling watch.\n" +
             "<b>Castle in the Sky (1986)</b>, a whimsical adventure exploring secrets hidden amongst the clouds.\n" +
-            "<b>Do the Right Thing (1989)</b>, its the hottest day of the year and racial tensions are rising in Brooklyn.\n" +
+            "<b>Do the Right Thing (1989)</b>, it's the hottest day of the year and racial tensions are rising in Brooklyn.\n" +
             "<b>Sound of Metal (2019)</b>, heavy metal drummer grapples with hearing loss.\n" +
-            "<b>Moonrise Kingdom (2012)</b>, two kids run away in the wilderness as various authorities try hunt them down.\n" +
+            "<b>Moonrise Kingdom (2012)</b>, two kids run away in the wilderness as various authorities try to hunt them down.\n" +
             "<b>The Princess Bride (1987)</b>, a classic, easy watch for a more chill movie night.\n",
         stack: ["Certified Bangers", "Movies and TV"],
         spotlightLabel: "Movies and TV shows",
