@@ -20,6 +20,9 @@
 .modal-card {
     position: relative;
     width: min(520px, 100%);
+    max-height: min(680px, 85vh);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     padding: 24px;
     border-radius: 24px;
     background: rgba(15, 23, 42, 0.96);
