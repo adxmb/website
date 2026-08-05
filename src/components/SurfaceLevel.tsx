@@ -17,7 +17,7 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
                     impact – tools that make learning, understanding, or
                     everyday tasks a little easier. I'm always looking to tackle
                     new challenges and apply what I know in new ways. I enjoy
-                    taking this curiousity beyond my work and am always keen to
+                    taking this curiosity beyond my work and am always keen to
                     learn something new in my everyday life.
                 </p>
                 <div className="action-row">
@@ -33,7 +33,7 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
                         className="ghost-link secondary"
                         onClick={onOpenContact}
                     >
-                        Say Hello
+                        Say Hello!
                     </button>
                 </div>
             </div>
@@ -48,7 +48,9 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
                     <p>
                         Scroll or swipe down through the three depths: projects
                         in the shallows, my background in the twilight zone, and
-                        more below.
+                        more below. <br />
+                        Catch anything swimming around to uncover details about
+                        different projects, experiences, and more.
                     </p>
                 </article>
                 <article
@@ -62,14 +64,6 @@ export function SurfaceLevel({ goToLevel, onOpenContact }: SurfaceLevelProps) {
                         just to say hi. Send an email or reach out on any of my
                         other platforms.
                     </p>
-                    {/* <br />
-                    <button
-                        type="button"
-                        className="ghost-link secondary"
-                        onClick={onOpenContact}
-                    >
-                        Get In Contact
-                    </button> */}
                 </article>
             </div>
         </div>

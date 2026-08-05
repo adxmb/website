@@ -66,7 +66,7 @@ export const projectsById: Record<string, Project> = {
         title: "AI Plant Matcher",
         description:
             "A proof-of-concept web application created for the DEVs Hackathon with the theme Hack for Humanity." +
-            " <i>Plantr</i> uses AI to make plant discovery engaging by allowing users to match with recommended plants based on their" +
+            " <i>Plantr</i> uses AI to make plant discovery engaging, allowing users to match with recommended plants based on their" +
             " profile via Tinder-esque swiping. 1st Place in UoA DEVS Hackathon 2024.\n",
         stack: ["React", "Node.js", "OpenAI"],
         link: "https://github.com/LocalhostLtd/DEV-Hackathon-2024",

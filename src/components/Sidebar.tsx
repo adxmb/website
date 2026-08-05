@@ -63,7 +63,6 @@ export function Sidebar({
                 inert={locked}
             >
                 <div className="brand-block">
-                    <p className="eyebrow">Ocean Portfolio</p>
                     <h2>Adam Bodicoat</h2>
                 </div>
 
